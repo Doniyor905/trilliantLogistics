@@ -1,0 +1,198 @@
+.services {
+    margin-top: 40px;
+
+    &__title {
+        color: #54AF3A;
+        font-size: 40px;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 40px;
+
+        &::after {
+            content: "";
+            width: 8%;
+            height: 3px;
+            background: #54AF3A;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    &__item {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 519px;
+        height: 264px;
+        padding-left: 30px;
+        gap: 20px;
+
+        &-title {
+            font-size: 35px;
+            color: #fff;
+            text-transform: uppercase;
+            line-height: 134.682%
+        }
+
+        &-text {
+            color: #FFF;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 134.682%;
+            width: 374px;
+        }
+    }
+
+    .multi {
+        background-image: url("../../images/services/services_multi.png");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-blend-mode: multiply;
+        background-color: rgba(0, 0, 0, 0.46);
+        transition: .5s;
+
+        &:hover {
+            background-color: rgba(84, 175, 58, 0.62);
+        }
+    }
+
+    .avia {
+        background-image: url("../../images/services/services_avia.png");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-blend-mode: multiply;
+        background-color: rgba(0, 0, 0, 0.46);
+        transition: .5s;
+
+        &:hover {
+            background-color: rgba(84, 175, 58, 0.62);
+        }
+    }
+
+    .tren {
+        background-image: url("../../images/services/services_tren.png");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-blend-mode: multiply;
+        background-color: rgba(0, 0, 0, 0.46);
+        transition: .5s;
+
+        &:hover {
+            background-color: rgba(84, 175, 58, 0.62);
+        }
+    }
+
+    .auto {
+        background-image: url("../../images/services/services_auto.png");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-blend-mode: multiply;
+        background-color: rgba(0, 0, 0, 0.46);
+        transition: .5s;
+
+        &:hover {
+            background-color: rgba(84, 175, 58, 0.62);
+        }
+    }
+}
+
+@media(max-width:1162px) {
+    .services {
+        &__item {
+            width: 410px;
+        }
+    }
+}
+
+@media(max-width:895px) {
+    .services {
+        &__inner {
+            gap: 10px;
+        }
+
+        &__item {
+            width: 337px;
+            height: 199px;
+
+            &-title {
+                font-size: 29px;
+            }
+
+            &-text {
+                width: 275px;
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+@media(max-width:710px) {
+    .services {
+        &__item {
+            width: 70%;
+        }
+    }
+}
+
+@media(max-width:552px) {
+    .services {
+        &__item {
+            width: 100%;
+            text-align: center;
+            padding: 0;
+
+            &-text {
+                margin: 0 auto;
+            }
+        }
+        &__title {
+            font-size: 32px;
+            margin-bottom: 24px;
+
+            &::after {
+                width: 30%;
+            }
+        }
+    }
+
+}
+
+@media(max-width:400px) {
+    .services {
+        &__item {
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+
+            &-title {
+                margin: 0 auto;
+                font-size: 25px;
+            }
+
+            &-text {
+                width: 100%;
+                font-size: 12px;
+            }
+        }
+        &__title {
+            font-size: 28px;
+            margin-bottom: 24px;
+
+            &::after {
+                width: 30%;
+            }
+        }
+    }
+}

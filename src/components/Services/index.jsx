@@ -3,7 +3,7 @@ import "./Services.scss"
 
 const Services = () => {
     return (
-        <div className='services'>
+        <div className='services' id="services">
             <div className="container">
                 <h2 className="services__title">
                     Наши услуги

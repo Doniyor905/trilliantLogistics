@@ -8,7 +8,7 @@ import { faFacebook } from '@fortawesome/free-brands-svg-icons'
 
 import "./Footer.scss"
 
-const Footer = () => {
+const Footer = ({setModal}) => {
     return (
         <div className='footer'>
             <div className="container">
@@ -51,7 +51,7 @@ const Footer = () => {
                             <li><a href="#!">Наши услуги</a></li>
                             <li><a href="#!">Транспорт</a></li>
                         </ul>
-                        <a href="#!" className='footer__right-btn'>СВЯЗАТЬСЯ</a>
+                        <button onClick={() => setModal(true)} href="#!" className='footer__right-btn'>СВЯЗАТЬСЯ</button>
                     </div>
                 </div>
             </div>

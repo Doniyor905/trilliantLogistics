@@ -7,7 +7,7 @@ import icon3 from "../../images/transport/icon_3.png";
 
 const Transport = () => {
     return (
-        <div className='transport'>
+        <div className='transport' id='transport'>
             <div className="container">
                 <div className='transport__title'>
                     <h2>

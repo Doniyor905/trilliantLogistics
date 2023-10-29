@@ -9,8 +9,11 @@ import counters from "../../images/advantages/counters.png"
 import counters2 from "../../images/advantages/counters_2.png"
 import counters3 from "../../images/advantages/counters_3.png"
 import counters4 from "../../images/advantages/counters_4.png"
+import ScrollTrigger from 'react-scroll-trigger'
+import CountUp from "react-countup";
 
 const Advantages = () => {
+    const [counterOn, setCounterOn] = React.useState(false)
     return (
         <div className='advantages'>
             <div className="container">
@@ -61,7 +64,12 @@ const Advantages = () => {
                                 <img src={counters} alt="" />
                             </div>
                             <div className="counters__item-numbres">
-                                <h3 className='counters__item-number'>100+</h3>
+                                <ScrollTrigger onEnter={() => setCounterOn(true)}>
+                                    <h3 className='counters__item-number'>
+                                        {counterOn && <CountUp duration={10} end={100} />}
+                                        +
+                                    </h3>
+                                </ScrollTrigger>
                                 <p className='counters__item-text'>Завершенные
                                     проекты</p>
                             </div>
@@ -71,7 +79,12 @@ const Advantages = () => {
                                 <img src={counters2} alt="" />
                             </div>
                             <div className="counters__item-numbres">
-                                <h3 className='counters__item-number'>100+</h3>
+                            <ScrollTrigger onEnter={() => setCounterOn(true)}>
+                                    <h3 className='counters__item-number'>
+                                        {counterOn && <CountUp duration={10} end={100} />}
+                                        +
+                                    </h3>
+                                </ScrollTrigger>
                                 <p className='counters__item-text'>Клиенты по
                                     всему миру</p>
                             </div>
@@ -81,7 +94,12 @@ const Advantages = () => {
                                 <img src={counters3} alt="" />
                             </div>
                             <div className="counters__item-numbres">
-                                <h3 className='counters__item-number'>100+</h3>
+                            <ScrollTrigger onEnter={() => setCounterOn(true)}>
+                                    <h3 className='counters__item-number'>
+                                        {counterOn && <CountUp duration={10} end={100} />}
+                                        +
+                                    </h3>
+                                </ScrollTrigger>
                                 <p className='counters__item-text'>Принадлежащие
                                     транспортные
                                     средства</p>
@@ -92,7 +110,12 @@ const Advantages = () => {
                                 <img src={counters4} alt="" />
                             </div>
                             <div className="counters__item-numbres">
-                                <h3 className='counters__item-number'>100+</h3>
+                            <ScrollTrigger onEnter={() => setCounterOn(true)}>
+                                    <h3 className='counters__item-number'>
+                                        {counterOn && <CountUp duration={10} end={100} />}
+                                        +
+                                    </h3>
+                                </ScrollTrigger>
                                 <p className='counters__item-text'>Люди в команде</p>
                             </div>
                         </div>

@@ -3,7 +3,8 @@ import headerTruck from "../../images/header/headerTruck.png"
 
 import "./HeaderBanner.scss"
 
-const HeaderBanner = () => {
+const HeaderBanner = ({setModal, modal}) => {
+
     return (
         <div className='header__banner'>
             <div className="container">
@@ -17,7 +18,7 @@ const HeaderBanner = () => {
                             грузоперевозок из узбекистана в страны ближнего востока, китаи,
                             оаэ, пакистан, индию, вьетнам, малазию, сингапур и др.
                             и обратно, из стран ближнего востока в узбекистан.</p>
-                        <a href="#!" className='header__left-btn'>Связаться</a>
+                        <button onClick={() => setModal(true)} className='header__left-btn'>Связаться</button>
                     </div>
                     <div className="header__right">
                         <div className='header__right-img'>

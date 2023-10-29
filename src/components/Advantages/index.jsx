@@ -72,7 +72,7 @@ const Advantages = () => {
     }
     return (
         <motion.div
-            viewport={{amount:0.5, once: true }}
+            viewport={{amount:0.2, once: true }}
             initial="hidden"
             whileInView="visible"
             className='advantages'>

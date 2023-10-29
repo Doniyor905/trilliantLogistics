@@ -15,7 +15,7 @@
 
     &.active {
         opacity: 1;
-        z-index: 1; 
+        z-index: 1;
     }
 
     &__close {
@@ -113,4 +113,53 @@
             margin: 0 auto;
         }
     }
+}
+
+@media(max-width:671px) {
+    .modal {
+        &__inner {
+            width: 443px;
+        }
+    }
+}
+
+@media(max-width:501px) {
+    .modal {
+        &__inner {
+            width: 347px;
+            height: 386px;
+            gap: 15px;
+        }
+
+        &__title h2 {
+            font-size: 24px;
+        }
+
+        .modal__item form {
+            width: 300px;
+
+            input {
+                height: 37px;
+            }
+        }
+    }
+}
+
+@media(max-width:350px) {
+.modal {
+    &__inner {
+        width: 100%;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    &__item {
+        padding-left: 10px;
+        padding-right: 10px;
+        &form {
+            width: 200px !important;
+        }
+    }
+
+}
 }

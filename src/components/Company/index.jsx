@@ -1,14 +1,41 @@
 import React from 'react'
 import "./Company.scss"
+import { motion } from 'framer-motion'
 
 import bg from "../../images/company/company.png"
 
 const Company = () => {
+    const ItemAnimationLeft = {
+        hidden: {
+            x: -100,
+            opacity: 0,
+        },
+        visible: custom => ({
+            x: 0,
+            opacity: 1,
+            transition: { delay: custom * 0.2 },
+        })
+    }
+    const ItemAnimationRight = {
+        hidden: {
+            x: 100,
+            opacity: 0,
+        },
+        visible: custom => ({
+            x: 0,
+            opacity: 1,
+            transition: { delay: custom * 0.2 },
+        })
+    }
     return (
-        <div className='company'>
+        <motion.div
+            viewport={{ once: true }}
+            initial="hidden"
+            whileInView="visible"
+            className='company'>
             <div className="container">
                 <div className="company__inner">
-                    <div className="company__left">
+                    <motion.div variants={ItemAnimationLeft} custom={1} className="company__left">
                         <h2 className="company__left-title">
                             Познакомьтесь с нашей
                             компанией
@@ -22,14 +49,14 @@ const Company = () => {
                             ОАЭ, ПАКИСТАН, ИНДИЮ, ВЬЕТНАМ, МАЛАЗИЮ,
                             СИНГАПУР И ДР. И ОБРАТНО, ИЗ СТРАН БЛИЖНЕГО
                             ВОСТОКА В УЗБЕКИСТАН.</p>
-                    </div>
-                    <div className="company__right">
+                    </motion.div>
+                    <motion.div variants={ItemAnimationRight} custom={2} className="company__right">
                         <img src={bg} alt="" />
-                    </div>
+                    </motion.div>
                 </div>
             </div>
 
-        </div>
+        </motion.div>
     )
 }
 

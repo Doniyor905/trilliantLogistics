@@ -1,12 +1,43 @@
 import React from 'react'
 import "./About.scss"
+import { motion } from 'framer-motion'
+
 
 const About = () => {
+
+    const AnimateItemLeft = {
+        hidden: {
+            x: -100,
+            opacity: 0,
+        },
+        visible: custom => ({
+            x: 0,
+            opacity: 1,
+            transition: { delay: custom * 0.5 },
+        })
+    }
+
+    
+    const AnimateItemRight = {
+        hidden: {
+            scale:0,
+            opacity:0,
+        },
+        visible: custom => ({
+            scale:1,
+            opacity:1,
+            transition: {delay:custom * 0.5},
+        })
+    }
     return (
-        <div className='about'>
+        <motion.div
+            viewport={{ once: true }}
+            initial="hidden"
+            whileInView="visible"
+            className='about'>
             <div className="container">
                 <div className="about__inner">
-                    <div className="about__left">
+                    <motion.div variants={AnimateItemLeft} className="about__left">
                         <h3 className="about__left-title">
                             Мы даем гарантию в срок и
                             держим свое слово.
@@ -28,8 +59,8 @@ const About = () => {
                             в страны ближнего востока или в импорте из стран ближнего
                             востока в узбекистан.
                         </div>
-                    </div>
-                    <div className="about__right">
+                    </motion.div>
+                    <motion.div variants={AnimateItemRight} custom={2} className="about__right">
                         <form className="about__form">
                             <h3 className='about__form-title'>Связаться с нами</h3>
                             <label className='about__form-input'>
@@ -46,10 +77,10 @@ const About = () => {
                             </label>
                             <button className='about__form-button'>Отправить</button>
                         </form>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

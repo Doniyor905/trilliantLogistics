@@ -4,9 +4,13 @@ import "./Header.scss"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 
+
 const HeaderMenu = ({ setBurgerMenu, burgerMenu }) => {
   return (
-    <div className="header__menu">
+    <div
+      initial="hidden"
+      whileInView="visible"
+      className="header__menu">
       <div className="container">
         <div className='header__menu-inner'>
           <a className="header__menu-logo" href="#!">

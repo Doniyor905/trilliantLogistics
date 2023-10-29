@@ -1,27 +1,77 @@
 import React from 'react'
 import "./Transport.scss"
+import { motion } from 'framer-motion'
+
 
 import icon from "../../images/transport/icon.png";
 import icon2 from "../../images/transport/icon_2.png";
 import icon3 from "../../images/transport/icon_3.png";
 
 const Transport = () => {
+    const ItemAnimationLeft = {
+        hidden: {
+            x: -100,
+            opacity: 0,
+        },
+        visible: custom => ({
+            x: 0,
+            opacity: 1,
+            transition: { delay: custom * 0.2 },
+        })
+    }
+    const ItemAnimationCentre = {
+        hidden: {
+            scale: 0,
+            opacity: 0,
+        },
+        visible: custom => ({
+            scale: 1,
+            opacity: 1,
+            transition: { delay: custom * 0.2 },
+        })
+    }
+    const ItemAnimationRight = {
+        hidden: {
+            scale: 0,
+            opacity: 0,
+        },
+        visible: custom => ({
+            scale: 1,
+            opacity: 1,
+            transition: { delay: custom * 0.2 },
+        })
+    }
+    const TitleAnimation = {
+        hidden: {
+            scale: 0,
+            opacity: 0,
+        },
+        visible: custom => ({
+            scale: 1,
+            opacity: 1,
+            transition: { delay: custom * 0.2 },
+        })
+    }
     return (
-        <div className='transport' id='transport'>
+        <motion.div
+            viewport={{amount:0.2, once: true }}
+            initial="hidden"
+            whileInView="visible"
+            className='transport' id='transport'>
             <div className="container">
-                <div className='transport__title'>
+                <motion.div variants={TitleAnimation} className='transport__title'>
                     <h2>
                         объединенный транспорт
                     </h2>
                     <p>Мы поддерживаем транспортировку на том же уровне, что и логистику, с круглосуточной
                         диспетчерской службой, гарантией своевременности и командой, которая заботится о вашем грузе так же, как и вы.
                         Мы не просто верим в обслуживание клиентов, мы верим в ПРЕВОСХОДСТВО клиентов.</p>
-                </div>
+                </motion.div>
 
                 <div className="transport__inner">
-                    <div className="transport__item">
+                    <motion.div variants={ItemAnimationLeft} custom={1} className="transport__item">
                         <div className='transport__item-icon'>
-                            <img src={icon} alt=""/>
+                            <img src={icon} alt="" />
                         </div>
                         <h3 className='transport__item-title'>Ускоренная / HVHR</h3>
                         <p className='transport__item-text'>
@@ -40,10 +90,10 @@ const Transport = () => {
                             тщательно отобраны для обеспечения
                             первоклассного обслуживания, которого
                             заслуживает ваш груз.</p>
-                    </div>
-                    <div className="transport__item">
+                    </motion.div>
+                    <motion.div variants={ItemAnimationCentre} custom={2} className="transport__item">
                         <div className='transport__item-icon'>
-                            <img src={icon2} alt=""/>
+                            <img src={icon2} alt="" />
                         </div>
                         <h3 className='transport__item-title'>Ускоренная / HVHR</h3>
                         <p className='transport__item-text'>
@@ -66,10 +116,10 @@ const Transport = () => {
                             сервису и не остановимся ни перед чем, чтобы
                             ваш груз был БЕЗОПАСНЫМ, НАДЕЖНЫМ И
                             СВОЕВРЕМЕННЫМ.</p>
-                    </div>
-                    <div className="transport__item">
+                    </motion.div>
+                    <motion.div variants={ItemAnimationRight} custom={1} className="transport__item">
                         <div className='transport__item-icon'>
-                            <img src={icon3} alt=""/>
+                            <img src={icon3} alt="" />
                         </div>
                         <h3 className='transport__item-title'>Ускоренная / HVHR</h3>
                         <p className='transport__item-text'>
@@ -85,12 +135,12 @@ const Transport = () => {
                             позволяющей быть настоящими
                             профессионалами в той роли,
                             которую они играют в «Юнайтед».</p>
-                    </div>
+                    </motion.div>
                 </div>
 
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d191884.83987132212!2d69.11455647780456!3d41.282737946304906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b0cc379e9c3%3A0xa5a9323b4aa5cb98!2z0KLQsNGI0LrQtdC90YIsINCj0LfQsdC10LrQuNGB0YLQsNC9!5e0!3m2!1sru!2str!4v1698516451639!5m2!1sru!2str" loading="lazy"></iframe>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

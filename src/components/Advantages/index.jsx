@@ -11,53 +11,113 @@ import counters3 from "../../images/advantages/counters_3.png"
 import counters4 from "../../images/advantages/counters_4.png"
 import ScrollTrigger from 'react-scroll-trigger'
 import CountUp from "react-countup";
+import { motion } from 'framer-motion'
+
 
 const Advantages = () => {
-    const [counterOn, setCounterOn] = React.useState(false)
+    const [counterOn, setCounterOn] = React.useState(false);
+    const TitleAnimation = {
+        hidden: {
+            scale: 0,
+        },
+        visible: custom => ({
+            scale: 1,
+            transition: {delay:custom * 0.5},
+        })
+    }
+
+    const ItemAnimationLeft = {
+        hidden: {
+            x: -100,
+            opacity: 0,
+        },
+        visible: custom => ({
+            x:0,
+            opacity:1,
+            transition: {delay:custom * 0.2},
+        })
+    }
+    const ItemAnimationRight = {
+        hidden: {
+            x: 100,
+            opacity: 0,
+        },
+        visible: custom => ({
+            x:0,
+            opacity:1,
+            transition: {delay:custom * 0.2},
+        })
+    }
+    const ItemCountAnimation = {
+        hidden: {
+            y: 100,
+            opacity: 0,
+        },
+        visible: custom => ({
+            y:0,
+            opacity:1,
+            transition: {delay:custom * 0.2},
+        })
+    }
+    const ItemAnimationCentre = {
+        hidden: {
+            scale: 0,
+            opacity: 0,
+        },
+        visible: custom => ({
+            scale:1,
+            opacity:1,
+            transition: {delay:custom * 0.2},
+        })
+    }
     return (
-        <div className='advantages'>
+        <motion.div
+            viewport={{amount:0.5, once: true }}
+            initial="hidden"
+            whileInView="visible"
+            className='advantages'>
             <div className="container">
-                <h2 className="advantages__title">
+                <motion.h2 variants={TitleAnimation} className="advantages__title">
                     Наши преимущества
-                </h2>
+                </motion.h2>
                 <div className="advantages__inner">
-                    <div className="advantages__item">
+                    <motion.div variants={ItemAnimationLeft} custom={1} className="advantages__item">
                         <div className='advantages__item-img'>
                             <img src={icon} alt="" />
                         </div>
                         <p className='advantages__item-text'>
                             Надежность
                         </p>
-                    </div>
+                    </motion.div>
 
-                    <div className="advantages__item">
+                    <motion.div variants={ItemAnimationCentre} custom={2} className="advantages__item">
                         <div className='advantages__item-img'>
                             <img src={icon2} alt="" />
                         </div>
                         <p className='advantages__item-text'>
                             Честность
                         </p>
-                    </div>
+                    </motion.div>
 
-                    <div className="advantages__item">
+                    <motion.div variants={ItemAnimationCentre} custom={2} className="advantages__item">
                         <div className='advantages__item-img'>
                             <img src={icon3} alt="" />
                         </div>
                         <p className='advantages__item-text'>
                             Xрабрость
                         </p>
-                    </div>
+                    </motion.div>
 
-                    <div className="advantages__item">
+                    <motion.div variants={ItemAnimationRight} custom={1} className="advantages__item">
                         <div className='advantages__item-img'>
                             <img src={icon4} alt="" />
                         </div>
                         <p className='advantages__item-text'>
                             Упорство
                         </p>
-                    </div>
+                    </motion.div>
                 </div>
-                <div className="counters">
+                <motion.div variants={ItemCountAnimation} custom={3} className="counters">
                     <div className="counters__inner">
                         <div className="counters__item">
                             <div className='counters__item-img'>
@@ -79,7 +139,7 @@ const Advantages = () => {
                                 <img src={counters2} alt="" />
                             </div>
                             <div className="counters__item-numbres">
-                            <ScrollTrigger onEnter={() => setCounterOn(true)}>
+                                <ScrollTrigger onEnter={() => setCounterOn(true)}>
                                     <h3 className='counters__item-number'>
                                         {counterOn && <CountUp duration={10} end={100} />}
                                         +
@@ -94,7 +154,7 @@ const Advantages = () => {
                                 <img src={counters3} alt="" />
                             </div>
                             <div className="counters__item-numbres">
-                            <ScrollTrigger onEnter={() => setCounterOn(true)}>
+                                <ScrollTrigger onEnter={() => setCounterOn(true)}>
                                     <h3 className='counters__item-number'>
                                         {counterOn && <CountUp duration={10} end={100} />}
                                         +
@@ -110,7 +170,7 @@ const Advantages = () => {
                                 <img src={counters4} alt="" />
                             </div>
                             <div className="counters__item-numbres">
-                            <ScrollTrigger onEnter={() => setCounterOn(true)}>
+                                <ScrollTrigger onEnter={() => setCounterOn(true)}>
                                     <h3 className='counters__item-number'>
                                         {counterOn && <CountUp duration={10} end={100} />}
                                         +
@@ -120,10 +180,10 @@ const Advantages = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </div>
 
-        </div>
+        </motion.div>
     )
 }
 

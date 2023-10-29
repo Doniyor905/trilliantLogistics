@@ -1,15 +1,55 @@
 import React from 'react'
 import "./Services.scss"
+import { motion } from 'framer-motion'
 
 const Services = () => {
+
+    const AnimateItemLeft = {
+        hidden: {
+            x:-100,
+            opacity:0,
+        },
+        visible: custom => ({
+            x:0,
+            opacity:1,
+            transition: {delay:custom * 0.5},
+        })
+    }
+    const AnimateItemRight = {
+        hidden: {
+            x:100,
+            opacity:0,
+        },
+        visible: custom => ({
+            x:0,
+            opacity:1,
+            transition: {delay:custom * 0.5},
+        })
+    }
+
+    const TitleAnimation = {
+        hidden: {
+            scale:0,
+            opacity:0,
+        },
+        visible: custom => ({
+            scale:1,
+            opacity:1,
+            transition: {delay:custom * 0.5},
+        })
+    }
     return (
-        <div className='services' id="services">
+        <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{amount:0.2, once: true}}
+            className='services' id="services">
             <div className="container">
-                <h2 className="services__title">
+                <motion.h2 variants={TitleAnimation} className="services__title">
                     Наши услуги
-                </h2>
+                </motion.h2>
                 <div className="services__inner">
-                    <div className="services__item multi">
+                    <motion.div  variants={AnimateItemLeft} custom={1} className="services__item multi">
                         <h3 className="services__item-title">
                             Мультимодальные
                             грузоперевозки
@@ -19,8 +59,8 @@ const Services = () => {
                             договору, но выполненная, по меньшей
                             мере, двумя видами транспорта;
                         </p>
-                    </div>
-                    <div className="services__item avia">
+                    </motion.div>
+                    <motion.div variants={AnimateItemRight} custom={2} className="services__item avia">
                         <h3 className="services__item-title">
                             авиаперевозки
                         </h3>
@@ -29,8 +69,8 @@ const Services = () => {
                             перевозки пассажиров при помощи
                             воздушных судов.
                         </p>
-                    </div>
-                    <div className="services__item auto">
+                    </motion.div>
+                    <motion.div variants={AnimateItemLeft} custom={1} className="services__item auto">
                         <h3 className="services__item-title">
                             Автоперевозки
                         </h3>
@@ -39,8 +79,8 @@ const Services = () => {
                             сухопутным транспортом по
                             безрельсовым путям.
                         </p>
-                    </div>
-                    <div className="services__item tren">
+                    </motion.div>
+                    <motion.div variants={AnimateItemRight} custom={1} className="services__item tren">
                         <h3 className="services__item-title">
                             Железнодорожные
                             перевозки
@@ -51,10 +91,10 @@ const Services = () => {
                             перевозку грузов при помощи
                             подвижного состава по железным дорогам.
                         </p>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

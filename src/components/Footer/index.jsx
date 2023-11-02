@@ -18,7 +18,7 @@ const Footer = ({setModal}) => {
                             <img src={logo} alt="" />
                         </div>
                         <div className="footer__left-social">
-                            <a className='footer__left-links' href="#!">
+                            <a className='footer__left-links' href="tel:+998935059797">
                                 <div>
                                     <FontAwesomeIcon className='footer__left-icon' icon={faPhone} />
                                 </div>
@@ -36,7 +36,7 @@ const Footer = ({setModal}) => {
                                 </div>
                                 <p>Trilliantlogistics.uz</p>
                             </a>
-                            <a className='footer__left-links' href="#!">
+                            <a className='footer__left-links' href="mailto:logistic.triliant@mail.ru">
                                 <div>
                                     <FontAwesomeIcon className='footer__left-icon' icon={faEnvelope} />
                                 </div>

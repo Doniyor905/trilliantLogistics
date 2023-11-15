@@ -12,18 +12,43 @@ import Transport from './components/Transport';
 
 function App() {
   const [modal, setModal] = React.useState();
-  const [burgerMenu, setBurgerMenu] = React.useState();
+  const [burgerMenu, setBurgerMenu] = React.useState(false);
+
+    let dataPartner = [
+    {
+      text: "О компании",
+      link: "#company",
+      tag: "a"
+    },
+    {
+      text: "Наши услуги",
+      link: "#services",
+      tag: "a"
+
+    },
+    {
+      text: "Наши партнеры",
+      link: "/partners",
+      tag: "Link"
+    },
+    {
+      text: "Транспорт",
+      link: "#transport",
+      tag: "a"
+
+    }
+  ]
 
   return (
     <>
-      <HeaderMenu burgerMenu={burgerMenu} setBurgerMenu={setBurgerMenu}/>
+      <HeaderMenu setBurgerMenu={setBurgerMenu} dataPartner={dataPartner} burgerMenu={burgerMenu}/>
       <HeaderBanner setModal={setModal} modal={modal}/>
       <Services />
       <About />
       <Advantages />
       <Company />
       <Transport />
-      <Footer setModal={setModal} modal={modal}/>
+      <Footer setModal={setModal} modal={modal} dataPartner={dataPartner}/>
       <Modal setModal={setModal} modal={modal}/>
     </>
   );

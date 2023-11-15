@@ -8,7 +8,7 @@ import { faFacebook } from '@fortawesome/free-brands-svg-icons'
 
 import "./Footer.scss"
 
-const Footer = ({setModal}) => {
+const Footer = ({ setModal, dataPartner }) => {
     return (
         <div className='footer'>
             <div className="container">
@@ -47,9 +47,13 @@ const Footer = ({setModal}) => {
 
                     <div className="footer__right">
                         <ul className="footer__right-nav">
-                            <li><a href="#!">О компании</a></li>
-                            <li><a href="#!">Наши услуги</a></li>
-                            <li><a href="#!">Транспорт</a></li>
+                            {dataPartner.map((item) => (
+                                <li><a href={item.link}>{item.text}</a></li>
+                            ))}
+                            {/* <li><a href="#company">О компании</a></li>
+                            <li><a href="#services">Наши услуги</a></li>
+                            <li><a href="/partners">Наши партнеры</a></li>
+                            <li><a href="#transport">Транспорт</a></li> */}
                         </ul>
                         <button onClick={() => setModal(true)} href="#!" className='footer__right-btn'>СВЯЗАТЬСЯ</button>
                     </div>

@@ -1,4 +1,3 @@
-import React from 'react'
 import "./Company.scss"
 import { motion } from 'framer-motion'
 
@@ -27,12 +26,14 @@ const Company = () => {
             transition: { delay: custom * 0.2 },
         })
     }
+
     return (
         <motion.div
             viewport={{ once: true }}
             initial="hidden"
             whileInView="visible"
-            className='company'>
+            className='company'
+            id="company">
             <div className="container">
                 <div className="company__inner">
                     <motion.div variants={ItemAnimationLeft} custom={1} className="company__left">

@@ -66,7 +66,7 @@ const Transport = () => {
                     <p>Мы поддерживаем транспортировку на том же уровне, что и логистику, с круглосуточной
                         диспетчерской службой, гарантией своевременности и командой, которая заботится о вашем грузе так же, как и вы.
                         Мы не просто верим в обслуживание клиентов, мы верим в ПРЕВОСХОДСТВО клиентов.</p>
-                </motion.div>
+                </motion.div> 
 
                 <div className="transport__inner">
                     <motion.div variants={ItemAnimationLeft} custom={1} className="transport__item">
@@ -74,7 +74,7 @@ const Transport = () => {
                             <img src={icon} alt="" />
                         </div>
                         <h3 className='transport__item-title'>Ускоренная / HVHR</h3>
-                        <p className='transport__item-text'>
+                        {/* <p className='transport__item-text'>
                             Мы знаем, что безопасность, надежность и
                             прозрачность являются главным приоритетом
                             для наших клиентов. Наша команда
@@ -89,14 +89,14 @@ const Transport = () => {
                             водителей и диспетчеров, которые были
                             тщательно отобраны для обеспечения
                             первоклассного обслуживания, которого
-                            заслуживает ваш груз.</p>
+                            заслуживает ваш груз.</p> */}
                     </motion.div>
                     <motion.div variants={ItemAnimationCentre} custom={2} className="transport__item">
                         <div className='transport__item-icon'>
                             <img src={icon2} alt="" />
                         </div>
-                        <h3 className='transport__item-title'>Ускоренная / HVHR</h3>
-                        <p className='transport__item-text'>
+                        <h3 className='transport__item-title'>Охлажденный</h3>
+                        {/* <p className='transport__item-text'>
                             Наш рефрижераторный парк способен
                             перевозить все, от фармацевтических
                             препаратов до производства. Благодаря новому
@@ -115,14 +115,14 @@ const Transport = () => {
                             Мы очень серьезно относимся к нашему
                             сервису и не остановимся ни перед чем, чтобы
                             ваш груз был БЕЗОПАСНЫМ, НАДЕЖНЫМ И
-                            СВОЕВРЕМЕННЫМ.</p>
+                            СВОЕВРЕМЕННЫМ.</p> */}
                     </motion.div>
                     <motion.div variants={ItemAnimationRight} custom={1} className="transport__item">
                         <div className='transport__item-icon'>
                             <img src={icon3} alt="" />
                         </div>
-                        <h3 className='transport__item-title'>Ускоренная / HVHR</h3>
-                        <p className='transport__item-text'>
+                        <h3 className='transport__item-title'>Стандарты</h3>
+                        {/* <p className='transport__item-text'>
                             Мы в «Юнайтед» придерживаемся высоких
                             стандартов. Мы не верим в «достаточно
                             хорошо», наша команда и гонщики
@@ -134,7 +134,7 @@ const Transport = () => {
                             подходом и личной стойкостью,
                             позволяющей быть настоящими
                             профессионалами в той роли,
-                            которую они играют в «Юнайтед».</p>
+                            которую они играют в «Юнайтед».</p> */}
                     </motion.div>
                 </div>
 

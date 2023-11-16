@@ -33,7 +33,7 @@ const Company = () => {
             initial="hidden"
             whileInView="visible"
             className='company'
-            id="company">
+           >
             <div className="container">
                 <div className="company__inner">
                     <motion.div variants={ItemAnimationLeft} custom={1} className="company__left">

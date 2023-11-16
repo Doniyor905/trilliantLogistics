@@ -34,7 +34,8 @@ const About = () => {
             viewport={{ once: true }}
             initial="hidden"
             whileInView="visible"
-            className='about'>
+            className='about'
+            id="company">
             <div className="container">
                 <div className="about__inner">
                     <motion.div variants={AnimateItemLeft} className="about__left">

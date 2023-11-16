@@ -28,11 +28,6 @@ function App() {
 
     },
     {
-      text: "Наши партнеры",
-      link: "/partners",
-      tag: "Link"
-    },
-    {
       text: "Транспорт",
       link: "#transport",
       tag: "a"

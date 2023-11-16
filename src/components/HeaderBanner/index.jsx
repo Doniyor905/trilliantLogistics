@@ -1,5 +1,5 @@
 import React from 'react'
-import headerTruck from "../../images/header/headerTruck.png"
+import headerTruck from "../../images/header/header-truck.png"
 
 import "./HeaderBanner.scss"
 import { motion } from 'framer-motion'

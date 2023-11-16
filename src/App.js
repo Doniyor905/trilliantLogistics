@@ -9,6 +9,7 @@ import HeaderMenu from './components/HeaderMenu';
 import Modal from './components/Modal';
 import Services from './components/Services';
 import Transport from './components/Transport';
+import Partners from './components/Partners';
 
 function App() {
   const [modal, setModal] = React.useState();
@@ -45,6 +46,7 @@ function App() {
       <HeaderBanner setModal={setModal} modal={modal}/>
       <Services />
       <About />
+      <Partners/>
       <Advantages />
       <Company />
       <Transport />

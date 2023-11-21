@@ -1,5 +1,7 @@
-.partners {
 
+
+.partners {
+    
     &__wrapper {
         background: url("../../images/header/headerBg.png");
         height: 400px;
@@ -70,6 +72,7 @@
     .partners__logo-item {
         height: 100%;
     }
+
 }
 
 @media(max-width:570px) {
@@ -80,7 +83,7 @@
     }
 
     .partners__logo-item img {
-        width: 50%;
+        width: 78% !important;
     }
 }
 

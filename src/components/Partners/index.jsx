@@ -3,7 +3,7 @@ import React from 'react'
 import logo from "../../images/partners/partner-logo.png"
 import logo2 from "../../images/partners/partner-logo2.png"
 import logo3 from "../../images/partners/partner-logo3.png"
-import logo4 from "../../images/partners/partner-logo4.jpg"
+import logo4 from "../../images/partners/partner-logo4.png"
 
 import "./Partners.scss"
 
